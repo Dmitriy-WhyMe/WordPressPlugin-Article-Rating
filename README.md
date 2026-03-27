@@ -66,14 +66,6 @@ Available option:
 
 - `Question text`: heading shown above the star rating block
 
-## 📸 Screenshots
-
-Add screenshots to `/assets` (or your docs folder) and reference them here:
-
-- Screenshot 1: rating block on desktop
-- Screenshot 2: rating block on mobile
-- Screenshot 3: plugin settings page in WordPress Admin
-
 ## 📌 Use Cases
 
 - Editorial teams collecting quick quality feedback on blog posts
