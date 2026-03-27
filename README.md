@@ -1,65 +1,97 @@
-# Article Pulse Rating
+﻿# Article Pulse Rating
 
-WordPress plugin для оценки статей по 5-звёздочной шкале.
+Lightweight WordPress plugin that adds a fast 5-star rating block to posts, stores votes in `post_meta`, and prevents repeat votes with cookies.
 
-## Возможности
+## Why This Plugin
 
-- Вывод рейтинга через шорткод `[article_rating]`
-- Поддержка явного ID записи: `[article_rating post_id="123"]`
-- Автоматическая работа в том типе записи, где размещён шорткод
-- Сохранение оценки через AJAX
-- Защита от повторного голосования через cookie
-- Подсчёт среднего рейтинга и количества голосов
-- Изменяемый заголовок вопроса через настройки плагина
-- Ссылка **Settings** рядом с кнопкой **Deactivate** на странице плагинов
+Most rating plugins are either too heavy or too generic for editorial content.  
+Article Pulse Rating gives you a clean, focused article feedback widget you can drop anywhere with one shortcode.
 
-## Установка
+## 🚀 Features
 
-1. Склонируйте репозиторий.
-2. Соберите ZIP:
+- ⭐ 5-star article rating UI via shortcode: `[article_rating]`
+- 🧩 Optional explicit post targeting: `[article_rating post_id="123"]`
+- ⚡ AJAX vote submission (no page reload)
+- 🔒 Duplicate-vote protection per post using a cookie
+- 📊 Live average score + vote count updates
+- ⚙️ Admin setting for custom rating question text
+- 📱 Responsive block layout for desktop and mobile
+- 🛠 Quick access `Settings` link from the Plugins page
+
+## 📦 Installation
+
+1. Clone or download this repository.
+2. Build the plugin ZIP:
 
 ```bat
 build-plugin.bat
 ```
 
-3. Получите архив:
+3. Locate the built package:
 
 ```text
 dist/article-pulse-rating.zip
 ```
 
-4. В WordPress: `Plugins -> Add New -> Upload Plugin`.
-5. Активируйте плагин.
+4. In WordPress Admin, go to `Plugins -> Add New -> Upload Plugin`.
+5. Upload `article-pulse-rating.zip`, install, and activate.
 
-## Использование
+## 🛠 Usage
 
-1. Перейдите в `Settings -> Article Pulse Rating`.
-2. Укажите текст вопроса (заголовок блока рейтинга).
-3. Добавьте шорткод в контент записи/шаблон:
+Add the shortcode inside a post/page:
 
 ```text
 [article_rating]
 ```
 
-или
+Rate a specific post ID from any template/content area:
 
 ```text
 [article_rating post_id="123"]
 ```
 
-## Как это работает
+The plugin stores and updates:
 
-- Сумма и количество голосов сохраняются в `post_meta`:
-  - `_kb_rating_total`
-  - `_kb_rating_count`
-  - `_kb_rating_average`
-- Повторное голосование для одного пользователя блокируется cookie `kb_rating_{post_id}`.
+- `_kb_rating_total`
+- `_kb_rating_count`
+- `_kb_rating_average`
 
-## Структура проекта
+## ⚙️ Configuration
 
-- `article-pulse-rating.php` — основной файл плагина
-- `build-plugin.bat` — сборка ZIP-архива для установки в WordPress
+Go to:
 
-## Лицензия
+`Settings -> Article Pulse Rating`
 
-MIT (или ваша внутренняя лицензия проекта).
+Available option:
+
+- `Question text`: heading shown above the star rating block
+
+## 📸 Screenshots
+
+Add screenshots to `/assets` (or your docs folder) and reference them here:
+
+- Screenshot 1: rating block on desktop
+- Screenshot 2: rating block on mobile
+- Screenshot 3: plugin settings page in WordPress Admin
+
+## 📌 Use Cases
+
+- Editorial teams collecting quick quality feedback on blog posts
+- Knowledge base sites measuring article usefulness
+- Content marketers prioritizing high-value articles by reader score
+- Product docs teams identifying pages that need updates
+
+## 🤝 Contributing
+
+Contributions are welcome and appreciated.
+
+1. Fork the repository
+2. Create a feature branch (`feat/my-improvement`)
+3. Commit your changes with clear messages
+4. Open a Pull Request with context and testing notes
+
+Please keep changes focused and include screenshots for UI updates.
+
+## 📄 License
+
+MIT License.
